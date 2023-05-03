@@ -1,4 +1,4 @@
-package kafka.schema.creator.controller;
+package com.bnhp.controller;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,11 +1,12 @@
-package kafka.schema.creator;
+package com.bnhp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class CreatorApplication {
-	public static void mail(String ...args) {
+
+	public static void main(String ...args) {
 		SpringApplication.run(CreatorApplication.class, args);
 	}
 }

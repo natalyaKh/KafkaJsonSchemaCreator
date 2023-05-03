@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--    required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>JSON TO SCHEMA</title>
+    <link ref="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        .showonload {display:none};
+        .hideonload {dispay:block};
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark showonload">
+    <a class="navbar-brand" href="#">
+        <img src="imgs/ninja.JPG" width="40px" height="40px" class="d-inline-block align-top" alt="">
+        JSON2SCHEMA by Kafka Team
+    </a>
+    <!--button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button-->
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <!--
+          <li class="nav-item active">
+            <a class="nav-link" href="#">CSR Generator<span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">PFX-P12-JKS Convertor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Help</a>
+          </li>
+          -->
+        </ul>
+    </div>
+</nav>
+
+
+<div class="alert alert-primary showonload" role="alert">
+    <p>Utility to generate JSON Schema out of JSON sample.</p>
+</div>
+
+<div id="loading" class="hideonload">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Loading ....</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="alertsDiv">
+</div>
+
+
+<div class="container showonload">
+    <div class="row">
+        <div class="col-5">
+            <form autocomplete="on" id="jsonInputForm" >
+                <div class="form-group">
+                    <label for="jsonInput" data-toggle="tooltip" data-placement="top" title="Paste JSON sample here">JSON Sample</label>
+                    <textarea class="form-control" id="jsonInput" name="jsonInput" rows="20"></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="col-2 align-self-center">
+            <button type="button" id="btnGenerate" class="btn btn-outline-primary">Generate >></button>
+        </div>
+        <div class="col-5">
+            <form autocomplete="on" id="jsonSchemaForm" >
+                <div class="form-group">
+                    <label for="jsonSchema" data-toggle="tooltip" data-placement="top" title="Resulted JSON Schema">JSON Schema</label>
+                    <textarea class="form-control" id="jsonSchema" name="jsonSchema" rows="20"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="dlgEmptyJSON" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="titleEmptyJSON">Empty JSON</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                JSON input is empty
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
